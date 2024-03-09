@@ -15,11 +15,11 @@
     <header class="header">
       <h1 class="heading content-section header__title">Карты подскажут</h1>
       <nav class="header__menu content-section">
-        <div class="header__logo">
+        <a class="header__logo">
           <svg xmlns="http://www.w3.org/2000/svg" width="135" height="25">
             <use href="./images/logo.svg#logo"></use>
           </svg>
-        </div>
+        </a>
         <ul class="header__theme-toggler">
           <li>
             <button class="header__theme-button header__theme-button_type_dark">
@@ -62,15 +62,12 @@
       </div>
       <figure class="content__figure">
         <picture>
-          <source srcset="./images/cards-1x.avif" type="image/avif">
-          <source srcset="./images/cards-2x.avif" type="image/avif">
-          <source srcset="./images/cards-1x.webp" type="image/webp">
-          <source srcset="./images/cards-2x.webp" type="image/webp">
+          <source srcset="./images/cards-1x.avif 1x, ./images/cards-2x.avif 2x" type="image/avif">
+          <source srcset="./images/cards-1x.webp 1x, ./images/cards-2x.webp 2x" type="image/webp">
           <img 
             class="content__picture" 
             src="./images/cards-1x.png"
-            srcset="./images/cards-1x.png 1x, 
-                    ./images/cards-2x.png 2x"
+            srcset="./images/cards-1x.png 1x, ./images/cards-2x.png 2x"
             alt="Колода Обходные стратегии"
             loading="lazy">
         </picture>
