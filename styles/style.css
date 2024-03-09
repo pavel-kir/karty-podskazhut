@@ -76,7 +76,8 @@ figure {
   flex-direction: row;
   align-items: center;
   list-style-type: none;
-  padding-top: 5px;
+  padding-inline-start: 0;
+  padding-block-start: 5px;
   gap: 20px;
 }
 
@@ -95,12 +96,18 @@ figure {
 }
 
 .header__theme-button:focus-visible {
-  outline: 1px solid var(--text-color);
+  outline: 1px solid var(--text-color, #312A4E);
   outline-offset: 2px;
 }
 
 .header__theme-button:hover {
   cursor: pointer;
+  text-decoration-color: rgba(49, 42, 78, 0.5);
+  text-decoration-line: underline;
+}
+
+.theme_dark .header__theme-button:hover {
+  text-decoration-color: rgba(179, 179, 179, 0.5);
 }
 
 .header__theme-button_is-active {
@@ -113,7 +120,7 @@ figure {
 .header__theme-button_is-active::after {
   content: "";
   position: absolute;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #FFAB6B);
   z-index: -1;
   inline-size: calc(100% + 6px);
   block-size: 0.3em;
@@ -137,7 +144,7 @@ figure {
 
 .content__text-block_type_first-lettered :first-child:first-letter {
   display: inline-block;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #FFAB6B);
   font-size: 30px;
   font-weight: 700;
   padding-left: 4px;
@@ -147,7 +154,7 @@ figure {
 }
 
 .theme_dark .content__text-block_type_first-lettered :first-child:first-letter {
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--text-color, #312A4E);
 }
 
 .content__paragraph:not(:last-child) {
@@ -186,8 +193,16 @@ figure {
   text-underline-offset: 2px;
 }
 
+.content__link:hover {
+  text-decoration-color: rgba(49, 42, 78, 0.5);
+}
+
+.theme_dark .content__link:hover {
+  text-decoration-color: rgba(179, 179, 179, 0.5);
+}
+
 .content__link:focus-visible {
-  outline: 1px solid var(--text-color);
+  outline: 1px solid var(--text-color, #312A4E);
   outline-offset: 2px;
 }
 
@@ -216,7 +231,7 @@ figure {
   position: absolute;
   top: 35px;
   left: -3px;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color, #312A4E);
   z-index: -1;
   inline-size: calc(100% + 8px);
   block-size: 0.25em;
@@ -247,8 +262,9 @@ figure {
 .content__list-item::before {
   content: "";
   position:absolute;
-  top: 3px;
   left: -25px;
+  inset-block-start: 50%;
+  margin-block-start: -7.5px;
   inline-size: 15px;
   block-size: 15px;
   background-image: url(../images/marker-light.svg);
@@ -262,7 +278,7 @@ figure {
 }
 
 .footer {
-  margin-block-start: calc(10% - 1px);
+  margin-block-start: 10%;
   padding: 2.5%;
   border-block-start: 1px solid currentColor;
 }
